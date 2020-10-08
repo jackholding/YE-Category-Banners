@@ -1,7 +1,7 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 
 export default {
-  name: "discourse-category-banners",
+  name: "ye-category-banners",
 
   initialize() {
     withPluginApi("0.8", (api) => {
