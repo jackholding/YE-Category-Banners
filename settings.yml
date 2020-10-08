@@ -2,6 +2,10 @@ show_description:
   default: true
   description: 'Show description from "About This Category" post'
 
+show_icon:
+  default: true
+  description: 'Show uploaded logo image from "About This Category" post'
+
 show_mobile:
   default: true
   description: "Show banners on mobile"
