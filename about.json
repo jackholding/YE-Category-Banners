@@ -1,6 +1,17 @@
 {
-  "name": "discourse-category-banners",
-  "about_url": "https://meta.discourse.org/t/discourse-category-banners/86241",
+  "name": "ye-category-banners",
   "component": true,
-  "license_url": "https://meta.discourse.org/t/discourse-category-banners/86241"
+  "license_url": "https://meta.discourse.org/t/discourse-category-banners/86241",
+  "about_url": "https://meta.discourse.org/t/discourse-category-banners/86241",
+  "authors": null,
+  "theme_version": 0.1,
+  "minimum_discourse_version": null,
+  "maximum_discourse_version": null,
+  "assets": {
+  },
+  "color_schemes": {
+  },
+  "modifiers": {
+  },
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
 }
