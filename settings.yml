@@ -4,7 +4,7 @@ show_description:
 
 show_icon:
   default: true
-  description: 'Show uploaded logo image from "About This Category" post'
+  description: 'Show uploaded category logo image'
 
 show_mobile:
   default: true
