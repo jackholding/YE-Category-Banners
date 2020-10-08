@@ -3,20 +3,29 @@ import { iconNode } from "discourse-common/lib/icon-library";
 import { createWidget } from "discourse/widgets/widget";
 
 function buildCategory(category) {
-  const content = [];
+  const header = [];
 
-  content.push(h("h1.category-title", category.name));
-
-  if (settings.show_description) {
-    content.push(
-      h(
-        "div.category-title-description",
-        h("div.cooked", { innerHTML: category.description })
-      )
+  if (settings.show_icon) {
+    header.push(
+      h("div.category-icon", { innerHTML: category.logo })
     );
   }
 
-  return content;
+  const content = [
+    h("h1.category-title", category.name)
+  ];
+
+  if (settings.show_description) {
+    content.push(
+      h("div.category-description", { innerHTML: category.description })
+    );
+  }
+
+  header.push(
+    h("div.category-content"), content,
+  )
+
+  return header;
 }
 
 export default createWidget("ye-category-header-widget", {
@@ -32,6 +41,8 @@ export default createWidget("ye-category-header-widget", {
       return;
     }
 
+    console.log('Category', category);
+
     const isException = settings.exceptions
       .split("|")
       .filter(Boolean)
@@ -46,7 +57,7 @@ export default createWidget("ye-category-header-widget", {
         document.body.classList.add("category-header");
 
         return h(
-          `div.category-title-header.category-banner-${category.slug}`,
+          `div.category-header.category-banner-${category.slug}`,
           {
             attributes: {
               style: `
@@ -55,7 +66,7 @@ export default createWidget("ye-category-header-widget", {
               `,
             },
           },
-          h("div.category-title-contents", buildCategory(category))
+          buildCategory(category),
         );
       }
     } else {
